@@ -6,6 +6,7 @@
 #include <wincrypt.h>
 
 #pragma comment(lib, "Crypt32")
+#pragma comment(lib, "ws2_32.lib")
 
 #undef NKG_CURRENT_SOURCE_FILE
 #undef NKG_CURRENT_SOURCE_LINE

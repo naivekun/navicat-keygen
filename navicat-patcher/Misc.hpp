@@ -10,6 +10,9 @@
 #define LOG_HINT(tab, fmt, ...) tab ? _tprintf_s(TEXT("%*c[*] " fmt "\n"), tab, ' ', __VA_ARGS__) : _tprintf_s(TEXT("[*] " fmt "\n"), __VA_ARGS__)
 #define LOG_SELECT(tab, fmt, ...) tab ? _tprintf_s(TEXT("%*c[?] " fmt " "), tab, ' ', __VA_ARGS__) : _tprintf_s(TEXT("[?] " fmt " "), __VA_ARGS__)
 
+#pragma comment(lib,"crypt32")
+#pragma comment(lib,"ws2_32.lib")
+
 namespace nkg {
 
     template<size_t __Len>

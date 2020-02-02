@@ -103,10 +103,13 @@ namespace nkg {
 
         [[nodiscard]]
         size_t Bits() const {
-            if (Get()->n == nullptr) {
+            const BIGNUM *n;
+            RSA_get0_key(Get(), &n, NULL, NULL);
+
+            if (n == nullptr) {
                 throw Exception(NKG_CURRENT_SOURCE_FILE(), NKG_CURRENT_SOURCE_LINE(), TEXT("RSA modulus has not been set."));
             } else {
-                return BN_num_bits(Get()->n);
+                return BN_num_bits(n);
             }
         }
 
